@@ -1,10 +1,12 @@
 import React from 'react'
 import Table from './Table'
+import Searchbox from './Searchbox'
 
 const Workshop = () => {
     return (
         <>
             <div>Workshop</div>
+            <Searchbox />
             <Table data={[
                 {
                     "id": "1",

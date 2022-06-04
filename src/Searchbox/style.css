@@ -1,0 +1,19 @@
+.Searchbox {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0px;
+  box-sizing: border-box;
+}
+
+.Searchbox > input {
+  width: 100%;
+  min-width: 300px;
+  height: var(--ip-height);
+}
+
+.Searchbox > button {
+  min-width: 100px;
+  max-width: 150px;
+  color: white;
+  background-color: var(--sp_green);
+}
