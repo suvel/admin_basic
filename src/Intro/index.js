@@ -7,7 +7,7 @@ function Intro() {
     <div className='Intro'>
       <div className='welcomeBanner'>
         <img src={wel_emoji} />
-        <p>Welcome to the ADMIN PAGE</p>
+        <h1>Welcome to the ADMIN PAGE</h1>
       </div>
     </div>
   )

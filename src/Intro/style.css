@@ -11,6 +11,8 @@
 
 .welcomeBanner {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .welcomeBanner img {
