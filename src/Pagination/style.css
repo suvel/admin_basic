@@ -1,8 +1,11 @@
 .Pagination {
   display: flex;
   flex-direction: row;
+  justify-items: center;
   padding: 10px 0px;
   gap: 5px;
+  width: 100%;
+  justify-content: center;
 }
 
 .RoundButton {
