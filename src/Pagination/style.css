@@ -1,0 +1,29 @@
+.Pagination {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0px;
+  gap: 5px;
+}
+
+.RoundButton {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.Pagination > .RoundButton {
+  color: var(--sp_green);
+  font-weight: bold;
+}
+
+.arrow {
+  width: 15px;
+}
+
+.arrow_left {
+  transform: rotate(270deg);
+}
+
+.arrow_right {
+  transform: rotate(90deg);
+}

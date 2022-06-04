@@ -1,6 +1,7 @@
 import React from 'react'
 import Table from './Table'
 import Searchbox from './Searchbox'
+import Pagination from './Pagination'
 
 const Workshop = () => {
     return (
@@ -27,6 +28,7 @@ const Workshop = () => {
                     "role": "admin"
                 }
             ]} />
+            <Pagination />
         </>
     )
 }
