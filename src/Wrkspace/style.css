@@ -13,3 +13,25 @@
   height: 100%;
   top: 0;
 }
+
+.Wrkspace_dataContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.Wrkspace_dataContainer > div:nth-child(odd) {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.Wrkspace_dataContainer > div:nth-child(1) {
+  flex: 2;
+}
+
+.Wrkspace_dataContainer > div:last-child {
+  flex: 1;
+}
