@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
 
+.Table {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
 .Table table {
   border-spacing: 0px;
   font-family: "Roboto Mono", monospace;
@@ -19,7 +24,7 @@
   box-sizing: border-box;
 }
 
-.Table table tbody tr:hover{
+.Table table tbody tr:hover {
   background-color: var(--dul_gray);
   cursor: pointer;
 }
