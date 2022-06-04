@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './style.css'
-import Table from '../Table';
+import TableData from '../TableData';
 import TableDataPallet from '../TableDataPallet'
 import Separator from '../Separator';
 
@@ -17,7 +17,7 @@ function Wrkspace() {
     return (
         <div onClick={toggleFullHeight} className={`Wrkspace ${fullHeightClass}`}>
             <div className="Wrkspace_dataContainer">
-                <Table />
+                <TableData />
                 <Separator />
                 <TableDataPallet />
             </div>

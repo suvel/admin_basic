@@ -15,8 +15,13 @@
 .Table table td {
   border: 1px solid black;
   border-collapse: collapse;
-  padding: 0 2px;
+  padding: 8px;
   box-sizing: border-box;
+}
+
+.Table table tr:hover{
+  background-color: var(--dul_gray);
+  cursor: pointer;
 }
 
 .Table table th:not(:first-child),

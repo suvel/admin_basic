@@ -1,6 +1,6 @@
 .Separator {
   height: calc(100% - 20px);
-  background-color: gray;
+  background-color: var(--dul_gray);
   width: 5px;
   border-radius: 2px;
 }

@@ -1,0 +1,10 @@
+.TableData {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0px 28px 0px 28px;
+  box-sizing: border-box;
+}
+.TableData_searchbox_container {
+  width: 40%;
+}
