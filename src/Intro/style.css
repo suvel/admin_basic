@@ -8,3 +8,11 @@
   left: 0;
   z-index: 1;
 }
+
+.welcomeBanner {
+  display: flex;
+}
+
+.welcomeBanner img {
+  width: 200px;
+}
