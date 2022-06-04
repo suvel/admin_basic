@@ -3,6 +3,7 @@ import './style.css'
 import TableData from '../TableData';
 import TableDataPallet from '../TableDataPallet'
 import Separator from '../Separator';
+import arrow from '../asset/arrow.svg'
 
 function Wrkspace() {
 
@@ -15,7 +16,11 @@ function Wrkspace() {
     }
 
     return (
-        <div onClick={toggleFullHeight} className={`Wrkspace ${fullHeightClass}`}>
+        <div  className={`Wrkspace ${fullHeightClass}`}>
+            <div onClick={toggleFullHeight} className="Wrkspace_fullscreen_toggler">
+                <img src={arrow} />
+                <div>FULL SCREEN</div>
+            </div>
             <div className="Wrkspace_dataContainer">
                 <TableData />
                 <Separator />

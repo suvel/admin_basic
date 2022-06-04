@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
 
 .Table {
-  max-height: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .Table table {

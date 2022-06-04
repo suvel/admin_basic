@@ -28,6 +28,78 @@ function TableData() {
                     "name": "Arvind Kumar",
                     "email": "arvind@mailinator.com",
                     "role": "admin"
+                },
+                {
+                    "id": "10",
+                    "name": "Aaron Miles",
+                    "email": "aaron@mailinator.com",
+                    "role": "member"
+                },
+                {
+                    "id": "20",
+                    "name": "Aishwarya Naik",
+                    "email": "aishwarya@mailinator.com",
+                    "role": "member"
+                },
+                {
+                    "id": "30",
+                    "name": "Arvind Kumar",
+                    "email": "arvind@mailinator.com",
+                    "role": "admin"
+                },
+                {
+                    "id": "100",
+                    "name": "Aaron Miles",
+                    "email": "aaron@mailinator.com",
+                    "role": "member"
+                },
+                {
+                    "id": "200",
+                    "name": "Aishwarya Naik",
+                    "email": "aishwarya@mailinator.com",
+                    "role": "member"
+                },
+                {
+                    "id": "300",
+                    "name": "Arvind Kumar",
+                    "email": "arvind@mailinator.com",
+                    "role": "admin"
+                },
+                {
+                    "id": "1000",
+                    "name": "Aaron Miles",
+                    "email": "aaron@mailinator.com",
+                    "role": "member"
+                },
+                {
+                    "id": "2000",
+                    "name": "Aishwarya Naik",
+                    "email": "aishwarya@mailinator.com",
+                    "role": "member"
+                },
+                {
+                    "id": "3000",
+                    "name": "Arvind Kumar",
+                    "email": "arvind@mailinator.com",
+                    "role": "admin"
+                },
+                {
+                    "id": "10000",
+                    "name": "Aaron Miles",
+                    "email": "aaron@mailinator.com",
+                    "role": "member"
+                },
+                {
+                    "id": "20000",
+                    "name": "Aishwarya Naik",
+                    "email": "aishwarya@mailinator.com",
+                    "role": "member"
+                },
+                {
+                    "id": "30000",
+                    "name": "Arvind Kumar",
+                    "email": "arvind@mailinator.com",
+                    "role": "admin"
                 }
             ]} />
             <Pagination />
