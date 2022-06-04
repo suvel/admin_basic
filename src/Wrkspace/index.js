@@ -18,7 +18,7 @@ function Wrkspace() {
         <div onClick={toggleFullHeight} className={`Wrkspace ${fullHeightClass}`}>
             <div className="Wrkspace_dataContainer">
                 <Table />
-                <Separator type="vertical" />
+                <Separator />
                 <TableDataPallet />
             </div>
         </div>
