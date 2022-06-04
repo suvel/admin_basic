@@ -37,11 +37,11 @@
 }
 
 .Wrkspace_dataContainer > div:nth-child(1) {
-  flex: 2;
+  flex: 3;
 }
 
 .Wrkspace_dataContainer > div:last-child {
-  flex: 1;
+  flex: 2;
 }
 
 .Wrkspace_fullscreen_toggler img {
