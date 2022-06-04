@@ -1,0 +1,8 @@
+.TableDataPallet {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.TableDataPallet_rowCount {
+  font-weight: bold;
+}
