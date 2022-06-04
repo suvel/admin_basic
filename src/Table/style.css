@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
+.Table table {
+  border-spacing: 0px;
+  font-family: "Roboto Mono", monospace;
+  width: 100%;
+}
+
+.Table table thead {
+  background-color: var(--sp_green);
+}
+
+.Table table,
+.Table table th,
+.Table table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0 2px;
+  box-sizing: border-box;
+}
+
+.Table table th:not(:first-child),
+.Table table td:not(:first-child) {
+  min-width: 100px;
+}
+
+.Table table th {
+  font-weight: bold;
+}
