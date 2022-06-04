@@ -19,7 +19,7 @@
   box-sizing: border-box;
 }
 
-.Table table tr:hover{
+.Table table tbody tr:hover{
   background-color: var(--dul_gray);
   cursor: pointer;
 }
