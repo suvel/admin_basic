@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.css'
 import Searchbox from '../Searchbox'
 import Table from '../Table'
 import Pagination from '../Pagination'
 
 function TableData() {
+
+    const [selectedRows, setSelectedRows] = useState([]);
+
+    const onRowSelection = (newSelectedRows) => {
+        setSelectedRows(newSelectedRows);
+    }
+
     return (
         <div className='TableData' >
             <div className="TableData_searchbox_container">
@@ -101,7 +108,12 @@ function TableData() {
                     "email": "arvind@mailinator.com",
                     "role": "admin"
                 }
-            ]} />
+            ]}
+
+
+                selectedRow={selectedRows}
+                onRowSelection={onRowSelection}
+            />
             <Pagination />
         </div>
     )
