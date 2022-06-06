@@ -31,7 +31,7 @@ function Table({ data, onRowSelection = () => { }, selectedRow: selectedRows = [
     //unselect one
     if (isChecked == false && (id && id != "all")) {
       console.log('unselected one')
-      const newSlectedRow = data.filter(item => item.id != id)
+      const newSlectedRow = selectedRows.filter(item => item.id != id)
       onRowSelection(newSlectedRow);
       setIsAllSelected(false)
     }
