@@ -5,3 +5,10 @@
   padding: 10px;
   box-sizing: border-box;
 }
+
+.Form_buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 10px;
+}
