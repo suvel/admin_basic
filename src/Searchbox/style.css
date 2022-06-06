@@ -5,13 +5,3 @@
   box-sizing: border-box;
   gap: 20px;
 }
-
-.Searchbox > button {
-  min-width: 100px;
-  max-width: 150px;
-  color: white;
-  background-color: var(--sp_green);
-  border-radius: 5px;
-  font-family: "Poppins";
-  font-size: 14px;
-}
