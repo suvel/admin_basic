@@ -1,0 +1,15 @@
+.Input {
+  width: 100%;
+  min-width: 300px;
+  height: var(--ip-height);
+  font-family: "Poppins";
+  font-size: 14px;
+  border: 2px solid #bac7d5;
+  border-radius: 5px;
+  padding: 6px 12px;
+}
+
+.Input:focus {
+  outline: none;
+  border-color: #0172cb;
+}
