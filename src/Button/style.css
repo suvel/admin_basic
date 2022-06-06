@@ -1,0 +1,30 @@
+.Button {
+  min-width: 100px;
+  max-width: 150px;
+  border-radius: 5px;
+  font-family: "Poppins";
+  font-size: 14px;
+  border: 2px solid transparent;
+  min-height: 44px;
+  background-color: transparent;
+}
+
+.Button.solid.carefree {
+  color: white;
+  background-color: var(--sp_green);
+}
+
+.Button.solid.alert {
+  color: white;
+  background-color: #9d0f0f;
+}
+
+.Button.outline.carefree {
+  color: var(--sp_green);
+  border-color: var(--sp_green);
+}
+
+.Button.outline.alert {
+  color: #9d0f0f;
+  border-color: #9d0f0f;
+}
