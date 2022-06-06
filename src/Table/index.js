@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import useTableRowSelector from './useTableRowSelector.js'
+import useTableRowSelector from './hook/useTableRowSelector.js'
 
 function Table({ data, onRowSelection = () => { }, selectedRow: selectedRows = [] }) {
 
