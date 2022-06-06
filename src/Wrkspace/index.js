@@ -4,6 +4,7 @@ import TableData from '../TableData';
 import TableDataPallet from '../TableDataPallet'
 import Separator from '../Separator';
 import arrow from '../asset/arrow.svg'
+import TableProvider from '../context/tableContext'
 
 function Wrkspace() {
 
@@ -22,9 +23,11 @@ function Wrkspace() {
                 <div>FULL SCREEN</div>
             </div>
             <div className="Wrkspace_dataContainer">
-                <TableData />
-                <Separator />
-                <TableDataPallet />
+                <TableProvider>
+                    <TableData />
+                    <Separator />
+                    <TableDataPallet />
+                </TableProvider>
             </div>
         </div>
     )
