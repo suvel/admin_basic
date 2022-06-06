@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import './style.css'
 import Searchbox from '../Searchbox'
 import Table from '../Table'
 import Pagination from '../Pagination'
+import { TableContext } from '../context/tableContext'
 
 function TableData() {
-
-    const [selectedRows, setSelectedRows] = useState([]);
-
-    const onRowSelection = (newSelectedRows) => {
-        setSelectedRows(newSelectedRows);
-    }
+    const { selectedTableRow, updateSelectedTableRow } = useContext(TableContext);
 
     return (
         <div className='TableData' >
@@ -111,8 +107,8 @@ function TableData() {
             ]}
 
 
-                selectedRow={selectedRows}
-                onRowSelection={onRowSelection}
+                selectedRow={selectedTableRow}
+                onRowSelection={updateSelectedTableRow}
             />
             <Pagination />
         </div>
