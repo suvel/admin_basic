@@ -3,7 +3,8 @@ import LabeledInput from '../LabeledInput'
 import Button from '../Button'
 import './style.css'
 
-const Form = () => {
+const Form = ({ onCancelClick }) => {
+
     return (
         <div className='Form'>
             <LabeledInput labelValue={"Name"} type="text" placeholder="Name" />
@@ -12,7 +13,7 @@ const Form = () => {
             <div className="Form_buttonsContainer">
                 <Button type='outline' variant='alert'>Delete</Button>
                 <Button type='outline' variant='carefree'>Edit</Button>
-                <Button>Cancel</Button>
+                <Button onClick={onCancelClick}>Cancel</Button>
             </div>
         </div>
     )
