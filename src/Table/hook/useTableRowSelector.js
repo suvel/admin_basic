@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 
-const useTableRowSelector = (data, selectedRows, updateSelectedRows) => {
-    const [tableData, setTableData] = useState(selectedRows);
+const useTableRowSelector = (data, selectedRows, updateSelectedRows, selectable) => {
+    const [tableData, setTableData] = useState([]);
     const [isAllSelected, setIsAllSelected] = useState(false);
 
     const toggleAllSelection = useCallback((currentData) => {
@@ -16,7 +16,7 @@ const useTableRowSelector = (data, selectedRows, updateSelectedRows) => {
     }, [selectedRows])
 
 
-
+    
     useEffect(() => {
         const isRowSelected = (id) => {
             return selectedRows.some(item => item.id == id)
@@ -28,9 +28,14 @@ const useTableRowSelector = (data, selectedRows, updateSelectedRows) => {
         })
         setTableData(newTableData);
 
-        toggleAllSelection(data)
+        if (!selectable) {
+            return;
+        }
+        else {
+            toggleAllSelection(data)
+        }
 
-    }, [selectedRows, data])
+    }, [selectedRows, data, selectable])
 
     const onSelectionChange = (event, id) => {
         const isChecked = event.target.checked

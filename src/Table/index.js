@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './style.css'
 import useTableRowSelector from './hook/useTableRowSelector.js'
 
-function Table({ data, onRowSelection = () => { }, selectedRow: selectedRows = [] }) {
+const selectedRowsDefaultValue = [];
+const dataDefaultValue = [];
+const onRowSelectionDefaultValue = () => { };
 
-  const { tableData, isAllSelected, onSelectionChange } = useTableRowSelector(data, selectedRows, onRowSelection)
+function Table(
+  {
+    data = dataDefaultValue, onRowSelection = onRowSelectionDefaultValue,
+    selectedRows = selectedRowsDefaultValue, selectable = false
+  }) {
+
+  const { tableData, isAllSelected, onSelectionChange } = useTableRowSelector(data, selectedRows, onRowSelection, selectable)
 
   const getRow = (row) => {
     if (row?.length > 0) {
       return tableData.map(dObj => {
         return (
           <tr key={dObj?.id}>
-            <td><input checked={dObj.isSelected} type="checkbox" onChange={(e) => onSelectionChange(e, dObj.id)} /></td>
+            {selectable && <td><input checked={dObj.isSelected} type="checkbox" onChange={(e) => onSelectionChange(e, dObj.id)} /></td>}
             <td>{dObj?.name}</td>
             <td>{dObj?.email}</td>
             <td>{dObj?.role}</td>
@@ -30,7 +38,7 @@ function Table({ data, onRowSelection = () => { }, selectedRow: selectedRows = [
       <table>
         <thead>
           <tr>
-            <th><input checked={isAllSelected} type="checkbox" onChange={(e) => onSelectionChange(e, "all")} /></th>
+            {selectable && <th><input checked={isAllSelected} type="checkbox" onChange={(e) => onSelectionChange(e, "all")} /></th>}
             <th>name</th>
             <th>email</th>
             <th>role</th>
