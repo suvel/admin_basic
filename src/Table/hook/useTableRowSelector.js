@@ -16,23 +16,28 @@ const useTableRowSelector = (data, selectedRows, updateSelectedRows, selectable)
     }, [selectedRows])
 
 
-    
+
     useEffect(() => {
-        const isRowSelected = (id) => {
-            return selectedRows.some(item => item.id == id)
-        }
-
-        const newTableData = data.map(item => {
-            const newItem = { ...item, isSelected: isRowSelected(item.id) }
-            return newItem;
-        })
-        setTableData(newTableData);
-
-        if (!selectable) {
-            return;
+        if (data.length == 0) {
+            setTableData([]);
         }
         else {
-            toggleAllSelection(data)
+            const isRowSelected = (id) => {
+                return selectedRows.some(item => item.id == id)
+            }
+
+            const newTableData = data.map(item => {
+                const newItem = { ...item, isSelected: isRowSelected(item.id) }
+                return newItem;
+            })
+            setTableData(newTableData);
+
+            if (!selectable) {
+                return;
+            }
+            else {
+                toggleAllSelection(data)
+            }
         }
 
     }, [selectedRows, data, selectable])
