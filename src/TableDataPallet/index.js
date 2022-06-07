@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import "./style.css";
 import NoActionPlaceholder from "../NoActionPlaceholder";
 import Form from '../Form'
 import { TableContext } from '../context/tableContext'
+import MultiRowAction from "../MultiRowAction";
 
 function TableDataPallet() {
   const { selectedTableRow, updateSelectedTableRow } = useContext(TableContext);
@@ -14,17 +15,19 @@ function TableDataPallet() {
     updateSelectedTableRow([]);
   }
 
+  const getWidget = useMemo(() => {
+    if (selectedTableCount > 1) return <MultiRowAction />
+    else if (selectedTableCount == 1) return <Form onCancelClick={handelCallback} />
+    else return <NoActionPlaceholder />
+  }, [selectedTableCount])
+
   return (
     <div className="TableDataPallet">
       <div className="TableDataPallet_rowCount">
         Total Rows:{selectedTableCount}
       </div>
       {
-        selectedTableCount > 0 ? (
-          <Form onCancelClick={handelCallback} />
-        ) : (
-          <NoActionPlaceholder />
-        )
+       getWidget
       }
     </div>
   );
