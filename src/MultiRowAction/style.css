@@ -1,0 +1,27 @@
+.MultiRowAction {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: inherit;
+}
+
+.MultiRowAction_cation {
+  background-color: var(--sp_green);
+  border: 2px solid black;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  font-family: inherit;
+  flex:2;
+}
+
+.MultiRowAction_tableContainer {
+    flex:1;
+}
+
+.MultiRowAction_action {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+  flex:1;
+}

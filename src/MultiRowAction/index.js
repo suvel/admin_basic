@@ -1,61 +1,59 @@
 import React, { useState, useEffect } from 'react'
 import Table from '../Table'
 import Button from '../Button'
+import './style.css'
+import alert_emoji from '../asset/alert_emoji.svg'
 
 const MultiRowAction = () => {
-    const [val, setVal] = useState([
-        {
-            "id": "1",
-            "name": "Aaron Miles",
-            "email": "aaron@mailinator.com",
-            "role": "member"
-        },
-        {
-            "id": "2",
-            "name": "Aishwarya Naik",
-            "email": "aishwarya@mailinator.com",
-            "role": "member"
-        },
-        {
-            "id": "3",
-            "name": "Arvind Kumar",
-            "email": "arvind@mailinator.com",
-            "role": "admin"
-        },
-        {
-            "id": "10",
-            "name": "Aaron Miles",
-            "email": "aaron@mailinator.com",
-            "role": "member"
-        },
-        {
-            "id": "20",
-            "name": "Aishwarya Naik",
-            "email": "aishwarya@mailinator.com",
-            "role": "member"
-        },
-        {
-            "id": "30",
-            "name": "Arvind Kumar",
-            "email": "arvind@mailinator.com",
-            "role": "admin"
-        }
-    ])
-
-    useEffect(() => {
-        // setTimeout(() => {
-        //     setVal([])
-        // }, 10000)
-    }, [])
-
     return (
         <div className='MultiRowAction'>
             <div className='MultiRowAction_cation'>
-                caution banner
+                <img src={alert_emoji} />
+                <p>Review the rows that you have selected for removing, by clicking Delete you might get the data back</p>
             </div>
-            <Table data={val} />
+            <div className="MultiRowAction_tableContainer">
+                <Table
+                    data={[
+                        {
+                            "id": "1",
+                            "name": "Aaron Miles",
+                            "email": "aaron@mailinator.com",
+                            "role": "member"
+                        },
+                        {
+                            "id": "2",
+                            "name": "Aishwarya Naik",
+                            "email": "aishwarya@mailinator.com",
+                            "role": "member"
+                        },
+                        {
+                            "id": "3",
+                            "name": "Arvind Kumar",
+                            "email": "arvind@mailinator.com",
+                            "role": "admin"
+                        },
+                        {
+                            "id": "10",
+                            "name": "Aaron Miles",
+                            "email": "aaron@mailinator.com",
+                            "role": "member"
+                        },
+                        {
+                            "id": "20",
+                            "name": "Aishwarya Naik",
+                            "email": "aishwarya@mailinator.com",
+                            "role": "member"
+                        },
+                        {
+                            "id": "30",
+                            "name": "Arvind Kumar",
+                            "email": "arvind@mailinator.com",
+                            "role": "admin"
+                        }
+                    ]} />
+            </div>
             <div className='MultiRowAction_action'>
-                <Button>Delete</Button>
+                <Button type='outline' variant='alert' >Delete</Button>
                 <Button>Cancel</Button>
             </div>
         </div>
