@@ -11,7 +11,7 @@ const MultiRowAction = () => {
         <div className='MultiRowAction'>
             <div className='MultiRowAction_cation'>
                 <img src={alert_emoji} />
-                <p>Review the rows that you have selected for removing, by clicking Delete you might get the data back</p>
+                <p>Review the rows that you have selected for removing, by clicking Delete you might not get the data back</p>
             </div>
             <div className="MultiRowAction_tableContainer">
                 <Table
