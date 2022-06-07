@@ -8,20 +8,20 @@
 .MultiRowAction_cation {
   background-color: var(--sp_green);
   border: 2px solid black;
-  padding: 18px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   font-family: inherit;
-  flex:2;
+  align-items: center;
 }
 
 .MultiRowAction_tableContainer {
-    flex:1;
+  height: calc(100% - 200px);
+  overflow-y: auto;
 }
 
 .MultiRowAction_action {
   display: flex;
   gap: 10px;
   justify-content: end;
-  flex:1;
 }
