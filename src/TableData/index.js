@@ -107,8 +107,9 @@ function TableData() {
             ]}
 
 
-                selectedRow={selectedTableRow}
-                onRowSelection={updateSelectedTableRow}
+                selectedRows={selectedTableRow}
+                onRowSelection={updateSelectedTableRow} 
+                selectable={true}
             />
             <Pagination />
         </div>
