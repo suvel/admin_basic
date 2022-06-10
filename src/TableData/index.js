@@ -60,7 +60,7 @@ function TableData({ initialData }) {
                 onRowSelection={updateSelectedTableRow}
                 selectable={true}
             />
-            <Pagination numberOfRecords={tableData?.length} onPageChange={handelOnPageChange} />
+            <Pagination records={tableData} onPageChange={handelOnPageChange} />
         </div>
     )
 }

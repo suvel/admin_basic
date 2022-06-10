@@ -8,11 +8,11 @@ const RoundButton = ({ children, selected, ...props }) => {
 
 const maxRowPerPage = 10;
 
-const Pagination = ({ numberOfRecords, onPageChange }) => {
+const Pagination = ({ records, onPageChange }) => {
 
     const [curPage, setCurPage] = useState(1);
 
-    const PageCount = Math.ceil(numberOfRecords / maxRowPerPage);
+    const PageCount = Math.ceil(records.length / maxRowPerPage);
     const getPageNumber = () => {
         let pageNumber = [];
         for (let i = 1; i <= PageCount; i++) {
@@ -42,7 +42,7 @@ const Pagination = ({ numberOfRecords, onPageChange }) => {
     useEffect(() => {
         onPageChange(0, maxRowPerPage);
         setCurPage(1);
-    }, [numberOfRecords])
+    }, [records])
 
     return (
         <div className='Pagination'>
