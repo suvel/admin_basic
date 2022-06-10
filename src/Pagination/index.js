@@ -36,7 +36,7 @@ const Pagination = ({ numberOfRecords, onPageChange }) => {
 
     useEffect(() => {
         onPageChange(0, maxRowPerPage);
-    }, [])
+    }, [numberOfRecords])
 
     return (
         <div className='Pagination'>
