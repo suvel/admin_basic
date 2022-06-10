@@ -5,8 +5,14 @@ import './style.css'
 import alert_emoji from '../asset/alert_emoji.svg'
 import { TableContext } from '../context/tableContext'
 
-const MultiRowAction = ({ onCancelClick }) => {
+const MultiRowAction = ({ onCancelClick, onDeleteClick }) => {
     const { selectedTableRow } = useContext(TableContext);
+
+    const handelDeletingMultipleRows = () => { 
+        const idsToDelete = selectedTableRow.map(row => row.id);
+        onDeleteClick(idsToDelete);
+    }
+
     return (
         <div className='MultiRowAction'>
             <div className='MultiRowAction_cation'>
@@ -18,7 +24,7 @@ const MultiRowAction = ({ onCancelClick }) => {
                     data={selectedTableRow} />
             </div>
             <div className='MultiRowAction_action'>
-                <Button type='outline' variant='alert' >Delete</Button>
+                <Button onClick={handelDeletingMultipleRows} type='outline' variant='alert' >Delete</Button>
                 <Button onClick={onCancelClick}>Cancel</Button>
             </div>
         </div>
