@@ -9,10 +9,12 @@ const initialTableData = []
 const Provider = (props) => {
 
     const [selectedTableRow, setSelectedTableRow] = useState(initialTableData);
+    const [tableData, setTableData] = useState(initialTableData);
 
     return (<TableContextProvider
         value={{
-            selectedTableRow, updateSelectedTableRow: setSelectedTableRow
+            selectedTableRow, updateSelectedTableRow: setSelectedTableRow,
+            tableData, updateTableData: setTableData
         }}
     > {props.children}</TableContextProvider >)
 }
