@@ -1,104 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import './style.css'
 import Searchbox from '../Searchbox'
 import Table from '../Table'
 import Pagination from '../Pagination'
 import { TableContext } from '../context/tableContext'
 
-const initialData = [
-    {
-        "id": "1",
-        "name": "Aaron Miles",
-        "email": "aaron@mailinator.com",
-        "role": "member"
-    },
-    {
-        "id": "2",
-        "name": "Aishwarya Naik",
-        "email": "aishwarya@mailinator.com",
-        "role": "member"
-    },
-    {
-        "id": "3",
-        "name": "Arvind Kumar",
-        "email": "arvind@mailinator.com",
-        "role": "admin"
-    },
-    {
-        "id": "10",
-        "name": "Aaron Miles",
-        "email": "aaron@mailinator.com",
-        "role": "member"
-    },
-    {
-        "id": "20",
-        "name": "Aishwarya Naik",
-        "email": "aishwarya@mailinator.com",
-        "role": "member"
-    },
-    {
-        "id": "30",
-        "name": "Arvind Kumar",
-        "email": "arvind@mailinator.com",
-        "role": "admin"
-    },
-    {
-        "id": "100",
-        "name": "Aaron Miles",
-        "email": "aaron@mailinator.com",
-        "role": "member"
-    },
-    {
-        "id": "200",
-        "name": "Aishwarya Naik",
-        "email": "aishwarya@mailinator.com",
-        "role": "member"
-    },
-    {
-        "id": "300",
-        "name": "Arvind Kumar",
-        "email": "arvind@mailinator.com",
-        "role": "admin"
-    },
-    {
-        "id": "1000",
-        "name": "Aaron Miles",
-        "email": "aaron@mailinator.com",
-        "role": "member"
-    },
-    {
-        "id": "2000",
-        "name": "Aishwarya Naik",
-        "email": "aishwarya@mailinator.com",
-        "role": "member"
-    },
-    {
-        "id": "3000",
-        "name": "Arvind Kumar",
-        "email": "arvind@mailinator.com",
-        "role": "admin"
-    },
-    {
-        "id": "10000",
-        "name": "Aaron Miles",
-        "email": "aaron@mailinator.com",
-        "role": "member"
-    },
-    {
-        "id": "20000",
-        "name": "Aishwarya Naik",
-        "email": "aishwarya@mailinator.com",
-        "role": "member"
-    },
-    {
-        "id": "30000",
-        "name": "Arvind Kumar",
-        "email": "arvind@mailinator.com",
-        "role": "admin"
-    }
-]
-
-function TableData() {
+function TableData({ initialData }) {
     const [data, SetData] = useState(initialData);
     const [paginatedData, setPaginatedData] = useState([]);
     const { selectedTableRow, updateSelectedTableRow } = useContext(TableContext);
@@ -130,10 +37,14 @@ function TableData() {
 
     }
 
-    const handelOnPageChange = (start, end) => { 
+    const handelOnPageChange = (start, end) => {
         const pageData = data.slice(start, end);
         setPaginatedData(pageData);
     }
+
+    useEffect(() => {
+        SetData(initialData);
+    }, [initialData])
 
     return (
         <div className='TableData' >
