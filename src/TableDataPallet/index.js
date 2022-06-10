@@ -6,18 +6,36 @@ import { TableContext } from '../context/tableContext'
 import MultiRowAction from "../MultiRowAction";
 
 function TableDataPallet() {
-  const { selectedTableRow, updateSelectedTableRow } = useContext(TableContext);
+  const {
+    selectedTableRow,
+    updateSelectedTableRow,
+    updateTableData
+  } = useContext(TableContext);
 
   const selectedTableCount = selectedTableRow?.length || 0;
 
-  const handelCallback = () => {
+  const handelCancelCallback = () => {
     //clearing the selection
     updateSelectedTableRow([]);
   }
 
+  const handelDeleteCallback = (memberIds) => {
+    //clearing the member from the table
+    updateTableData(currentTableData => {
+      return currentTableData.filter(member => {
+        return !memberIds.includes(member.id);
+      })
+    });
+    updateSelectedTableRow([]);
+  }
+
   const getWidget = useMemo(() => {
-    if (selectedTableCount > 1) return <MultiRowAction onCancelClick={handelCallback} />
-    else if (selectedTableCount == 1) return <Form data={selectedTableRow[0]} onCancelClick={handelCallback} />
+    if (selectedTableCount > 1) return <MultiRowAction onCancelClick={handelCancelCallback} />
+    else if (selectedTableCount == 1) return (
+      <Form data={selectedTableRow[0]}
+        onCancelClick={handelCancelCallback}
+        onDeleteClick={handelDeleteCallback} />
+    )
     else return <NoActionPlaceholder />
   }, [selectedTableCount])
 
