@@ -5,7 +5,7 @@ import './style.css'
 import alert_emoji from '../asset/alert_emoji.svg'
 import { TableContext } from '../context/tableContext'
 
-const MultiRowAction = () => {
+const MultiRowAction = ({ onCancelClick }) => {
     const { selectedTableRow } = useContext(TableContext);
     return (
         <div className='MultiRowAction'>
@@ -19,7 +19,7 @@ const MultiRowAction = () => {
             </div>
             <div className='MultiRowAction_action'>
                 <Button type='outline' variant='alert' >Delete</Button>
-                <Button>Cancel</Button>
+                <Button onClick={onCancelClick}>Cancel</Button>
             </div>
         </div>
     )

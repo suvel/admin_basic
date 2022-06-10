@@ -16,7 +16,7 @@ function TableDataPallet() {
   }
 
   const getWidget = useMemo(() => {
-    if (selectedTableCount > 1) return <MultiRowAction />
+    if (selectedTableCount > 1) return <MultiRowAction onCancelClick={handelCallback} />
     else if (selectedTableCount == 1) return <Form data={selectedTableRow[0]} onCancelClick={handelCallback} />
     else return <NoActionPlaceholder />
   }, [selectedTableCount])
