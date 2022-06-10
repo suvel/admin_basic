@@ -100,6 +100,7 @@ const initialData = [
 
 function TableData() {
     const [data, SetData] = useState(initialData);
+    const [paginatedData, setPaginatedData] = useState([]);
     const { selectedTableRow, updateSelectedTableRow } = useContext(TableContext);
 
     const handelOnSearchClicked = (searchText) => {
@@ -129,17 +130,22 @@ function TableData() {
 
     }
 
+    const handelOnPageChange = (start, end) => { 
+        const pageData = data.slice(start, end);
+        setPaginatedData(pageData);
+    }
+
     return (
         <div className='TableData' >
             <div className="TableData_searchbox_container">
                 <Searchbox onSearchClicked={handelOnSearchClicked} />
             </div>
-            <Table data={data}
+            <Table data={paginatedData}
                 selectedRows={selectedTableRow}
                 onRowSelection={updateSelectedTableRow}
                 selectable={true}
             />
-            <Pagination />
+            <Pagination numberOfRecords={data?.length} onPageChange={handelOnPageChange} />
         </div>
     )
 }
