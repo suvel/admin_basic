@@ -59,6 +59,19 @@
   margin: 0 auto;
 }
 
+.Wrkspace_fullscreen_toggler img {
+  transition: ease-in;
+  transition-delay: 90ms;
+}
+
+.Wrkspace_fullscreen_toggler:hover img {
+  transform: scale(1.5) !important;
+}
+
 .Wrkspace.full-height > .Wrkspace_fullscreen_toggler img {
   transform: rotate(180deg);
+}
+
+.Wrkspace.full-height > .Wrkspace_fullscreen_toggler:hover img {
+  transform: rotate(180deg) scale(1.5) !important;
 }
