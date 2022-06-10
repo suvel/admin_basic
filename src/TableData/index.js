@@ -6,25 +6,29 @@ import Pagination from '../Pagination'
 import { TableContext } from '../context/tableContext'
 
 function TableData({ initialData }) {
-    const [data, SetData] = useState(initialData);
     const [paginatedData, setPaginatedData] = useState([]);
-    const { selectedTableRow, updateSelectedTableRow } = useContext(TableContext);
+    const {
+        selectedTableRow,
+        updateSelectedTableRow,
+        tableData,
+        updateTableData,
+    } = useContext(TableContext);
 
     const handelOnSearchClicked = (searchText) => {
 
         const handelSearch = () => {
             if (searchText) {
-                const searchData = data.filter(item => {
+                const searchData = tableData.filter(item => {
                     return (
                         item.name.toLowerCase().includes(searchText.toLowerCase()) ||
                         item.email.toLowerCase().includes(searchText.toLowerCase()) ||
                         item.role.toLowerCase().includes(searchText.toLowerCase())
                     )
                 })
-                SetData(searchData)
+                updateTableData(searchData)
             }
             else {
-                SetData(initialData)
+                updateTableData(initialData)
             }
         }
 
@@ -38,12 +42,12 @@ function TableData({ initialData }) {
     }
 
     const handelOnPageChange = (start, end) => {
-        const pageData = data.slice(start, end);
+        const pageData = tableData.slice(start, end);
         setPaginatedData(pageData);
     }
 
     useEffect(() => {
-        SetData(initialData);
+        updateTableData(initialData);
     }, [initialData])
 
     return (
@@ -56,7 +60,7 @@ function TableData({ initialData }) {
                 onRowSelection={updateSelectedTableRow}
                 selectable={true}
             />
-            <Pagination numberOfRecords={data?.length} onPageChange={handelOnPageChange} />
+            <Pagination numberOfRecords={tableData?.length} onPageChange={handelOnPageChange} />
         </div>
     )
 }
