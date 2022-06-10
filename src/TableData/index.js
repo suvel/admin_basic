@@ -18,7 +18,7 @@ function TableData({ initialData }) {
 
         const handelSearch = () => {
             if (searchText) {
-                const searchData = tableData.filter(item => {
+                const searchData = initialData.filter(item => {
                     return (
                         item.name.toLowerCase().includes(searchText.toLowerCase()) ||
                         item.email.toLowerCase().includes(searchText.toLowerCase()) ||
