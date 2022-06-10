@@ -9,7 +9,8 @@ function TableDataPallet() {
   const {
     selectedTableRow,
     updateSelectedTableRow,
-    updateTableData
+    updateTableData,
+    tableData,
   } = useContext(TableContext);
 
   const selectedTableCount = selectedTableRow?.length || 0;
@@ -29,12 +30,22 @@ function TableDataPallet() {
     updateSelectedTableRow([]);
   }
 
+  const handelUpdateCallback = (currentMemId, updatedAttribute) => {
+    let clonedTableData = [...tableData];
+    const currentMemIndex = clonedTableData.findIndex(member => member.id === currentMemId);
+    const currentMem = clonedTableData[currentMemIndex];
+    clonedTableData[currentMemIndex] = { ...currentMem, ...updatedAttribute };
+    updateTableData(clonedTableData);
+  }
+
   const getWidget = useMemo(() => {
     if (selectedTableCount > 1) return <MultiRowAction onCancelClick={handelCancelCallback} />
     else if (selectedTableCount == 1) return (
       <Form data={selectedTableRow[0]}
         onCancelClick={handelCancelCallback}
-        onDeleteClick={handelDeleteCallback} />
+        onDeleteClick={handelDeleteCallback}
+        onEdtClick={handelUpdateCallback}
+      />
     )
     else return <NoActionPlaceholder />
   }, [selectedTableCount])
