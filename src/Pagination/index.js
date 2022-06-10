@@ -22,20 +22,26 @@ const Pagination = ({ numberOfRecords, onPageChange }) => {
     }
 
     const handelNavigation = (navigationId) => {
-        let newNavigationId = navigationId;
-        if (navigationId == "nxt") {
-            newNavigationId = curPage + 1
+        let newNavigationId = curPage;
+        if ((navigationId == "nxt" && curPage >= PageCount) || (navigationId == "prv" && curPage <= 1)) {
+            return
+        }
+        else if (navigationId == "nxt") {
+            newNavigationId += 1
         }
         else if (navigationId == "prv") {
-            newNavigationId = curPage - 1
+            newNavigationId -= 1
         }
-        debugger;
+        else {
+            newNavigationId = navigationId;
+        }
         setCurPage(newNavigationId);
         onPageChange((newNavigationId - 1) * maxRowPerPage, maxRowPerPage * newNavigationId);
     }
 
     useEffect(() => {
         onPageChange(0, maxRowPerPage);
+        setCurPage(1);
     }, [numberOfRecords])
 
     return (
