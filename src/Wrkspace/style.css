@@ -23,6 +23,16 @@
   top: 0;
 }
 
+.Wrkspace.min-height {
+  height: auto;
+  top: unset;
+  bottom: 0;
+}
+
+.Wrkspace.min-height > .Wrkspace_dataContainer {
+  display: none;
+}
+
 .Wrkspace_dataContainer {
   display: flex;
   flex-direction: row;
