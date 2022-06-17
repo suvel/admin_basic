@@ -2,7 +2,7 @@ import React, { useContext, useMemo } from "react";
 import "./style.css";
 import NoActionPlaceholder from "../NoActionPlaceholder";
 import Form from '../Form'
-import { TableContext } from '../context/tableContext'
+import { TableContext } from '../../context/tableContext'
 import MultiRowAction from "../MultiRowAction";
 
 function TableDataPallet() {

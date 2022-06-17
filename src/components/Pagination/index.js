@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './style.css'
-import arrow from '../asset/arrow.svg'
+import arrow from '../../asset/arrow.svg'
 
 const RoundButton = ({ children, selected, ...props }) => {
     return <button className={`RoundButton ${selected ? "selected" : ""}`}  {...props} > {children}</button >

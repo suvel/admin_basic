@@ -1,6 +1,6 @@
 import './App.css';
-import Intro from './Intro';
-import Wrkspace from './Wrkspace';
+import Intro from './components/Intro';
+import Wrkspace from './components/Wrkspace';
 import WrkSpaceWinProvider from './context/wrkSpaceWinContext'
 
 function App() {

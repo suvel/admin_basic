@@ -1,8 +1,8 @@
 import './style.css'
-import twitter_icon from '../asset/sm_twitter.svg'
-import fb_icon from '../asset/sm_fb.svg'
-import gmail_icon from '../asset/sm_gmail.svg'
-import wel_emoji from '../asset/wel_emoji.png'
+import twitter_icon from '../../asset/sm_twitter.svg'
+import fb_icon from '../../asset/sm_fb.svg'
+import gmail_icon from '../../asset/sm_gmail.svg'
+import wel_emoji from '../../asset/wel_emoji.png'
 
 const DevInfo = () => {
   return (

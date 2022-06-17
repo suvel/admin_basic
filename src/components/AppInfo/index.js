@@ -1,7 +1,7 @@
 import './style.css'
 import { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
-import aboutMD from '../content/about.md'
+import aboutMD from '../../content/about.md'
 
 const AppInfo = () => {
   const [applicationIntro, setApplicationIntro] = useState("");

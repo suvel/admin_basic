@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import Table from '../Table'
 import Button from '../Button'
 import './style.css'
-import alert_emoji from '../asset/alert_emoji.svg'
-import { TableContext } from '../context/tableContext'
+import alert_emoji from '../../asset/alert_emoji.svg'
+import { TableContext } from '../../context/tableContext'
 
 const MultiRowAction = ({ onCancelClick, onDeleteClick }) => {
     const { selectedTableRow } = useContext(TableContext);

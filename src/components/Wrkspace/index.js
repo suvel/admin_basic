@@ -3,10 +3,10 @@ import './style.css'
 import TableData from '../TableData';
 import TableDataPallet from '../TableDataPallet'
 import Separator from '../Separator';
-import arrow from '../asset/arrow.svg'
-import TableProvider from '../context/tableContext'
-import memberlistPromise from '../services/members/member.ls.js';
-import { WrkSpaceWinContext } from '../context/wrkSpaceWinContext';
+import arrow from '../../asset/arrow.svg'
+import TableProvider from '../../context/tableContext'
+import memberlistPromise from '../../services/members/member.ls.js';
+import { WrkSpaceWinContext } from '../../context/wrkSpaceWinContext';
 
 
 function Wrkspace() {

@@ -1,6 +1,6 @@
 import './style.css'
 import ClickableText from '../ClickableText'
-import wel_emoji from '../asset/wel_emoji.png'
+import wel_emoji from '../../asset/wel_emoji.png'
 
 const WelcomeBanner = ({
   handelAdjustingWorkSpaceWind,

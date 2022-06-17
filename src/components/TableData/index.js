@@ -3,7 +3,7 @@ import './style.css'
 import Searchbox from '../Searchbox'
 import Table from '../Table'
 import Pagination from '../Pagination'
-import { TableContext } from '../context/tableContext'
+import { TableContext } from '../../context/tableContext'
 
 function TableData({ initialData }) {
     const [paginatedData, setPaginatedData] = useState([]);

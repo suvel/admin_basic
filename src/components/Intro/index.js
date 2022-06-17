@@ -1,6 +1,6 @@
 import React, { useContext} from 'react'
 import './style.css'
-import { WrkSpaceWinContext } from '../context/wrkSpaceWinContext'
+import { WrkSpaceWinContext } from '../../context/wrkSpaceWinContext'
 import WelcomeBanner from '../WelcomeBanner'
 import AppInfo from '../AppInfo'
 import DevInfo from '../DevInfo'

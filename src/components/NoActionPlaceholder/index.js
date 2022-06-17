@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import sad_emoji from "../asset/sad_emoji.png";
+import sad_emoji from "../../asset/sad_emoji.png";
 
 function NoActionPlaceholder() {
   return (
