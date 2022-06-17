@@ -14,6 +14,10 @@ function TableData({ initialData }) {
         updateTableData,
     } = useContext(TableContext);
 
+    const clearSelection = () => {
+        updateSelectedTableRow([])
+    }
+
     const handelOnSearchClicked = (searchText) => {
 
         const handelSearch = () => {
@@ -32,10 +36,6 @@ function TableData({ initialData }) {
             }
         }
 
-        const clearSelection = () => {
-            updateSelectedTableRow([])
-        }
-
         handelSearch();
         clearSelection();
 
@@ -44,6 +44,7 @@ function TableData({ initialData }) {
     const handelOnPageChange = (start, end) => {
         const pageData = tableData.slice(start, end);
         setPaginatedData(pageData);
+        clearSelection();
     }
 
     useEffect(() => {
