@@ -9,43 +9,6 @@
   z-index: 1;
 }
 
-.welcomeBanner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.welcomeBanner img {
-  width: 200px;
-  animation-name: floating;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes floating {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, 15px);
-  }
-  100% {
-    transform: translate(0, -0px);
-  }
-}
-
-.intro_content {
-  text-align: center;
-}
-
-.clickableText {
-  cursor: pointer;
-}
-.clickableText:hover {
-  color: white;
-}
-
 .application_content {
   position: absolute;
   top: calc(100vh - 70%);
@@ -55,26 +18,4 @@
   box-sizing: border-box;
   overflow: 0 auto;
   overflow-y: auto;
-}
-
-.app_intro {
-  color: white;
-  font-family: "Poppins";
-}
-
-.dev_info {
-  display: flex;
-  width: fit-content;
-  color: white;
-  font-family: "Poppins";
-  margin: 20px 0 0 auto;
-}
-
-.dev_info > .avatar img {
-  width: 80px;
-}
-
-.dev_detail > .dev_contact {
-  display: flex;
-  gap: 20px;
 }

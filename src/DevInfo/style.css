@@ -1,0 +1,16 @@
+.dev_info {
+  display: flex;
+  width: fit-content;
+  color: white;
+  font-family: "Poppins";
+  margin: 20px 0 0 auto;
+}
+
+.dev_info > .avatar img {
+  width: 80px;
+}
+
+.dev_detail > .dev_contact {
+  display: flex;
+  gap: 20px;
+}
