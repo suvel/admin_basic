@@ -1,0 +1,19 @@
+{
+  "name": " Cody Fisher",
+  "designation": "SE",
+  "company": "Barone LLC.",
+  "social_contact": [
+    {
+      "key": "FB",
+      "url": "https://www.facebook.com/zuck"
+    },
+    {
+      "key": "Tw",
+      "url": "https://twitter.com/finkd"
+    },
+    {
+      "key": "MAIL",
+      "url": "mailto:zuckerberg@fb.com"
+    }
+  ]
+}
