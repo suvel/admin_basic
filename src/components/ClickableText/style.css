@@ -4,3 +4,7 @@
 .clickableText:hover {
   color: white;
 }
+
+.clickableText.disappear {
+  visibility: hidden;
+}
