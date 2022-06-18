@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.welcomeBanner h1{
+  font-family: "Roboto Mono", sans-serif;
+}
+
 .welcomeBanner img {
   width: 200px;
   animation-name: floating;
