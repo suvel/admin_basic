@@ -1,0 +1,14 @@
+.showWorkspace-container {
+  position: sticky;
+  top: -57px;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+
+  transition: 200ms ease-in-out;
+}
+
+.showWorkspace-container.is-pinned {
+  background: linear-gradient(185deg, var(--sp_green), transparent);
+}
