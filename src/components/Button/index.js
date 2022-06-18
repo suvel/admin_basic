@@ -1,9 +1,17 @@
 import React from 'react'
 import './style.css'
 
+/**
+ types:-
+ outline
+ solid
+ */
+
 /*
+variants:-
 carefree - no side effects
 alert - has sever side effects
+mr_white - has no side effects
 */
 
 

@@ -19,6 +19,11 @@
   background-color: #9d0f0f;
 }
 
+.Button.solid.mr_white {
+  color: white;
+  border-color: white;
+}
+
 .Button.outline.carefree {
   color: var(--sp_green);
   border-color: var(--sp_green);
@@ -27,4 +32,9 @@
 .Button.outline.alert {
   color: #9d0f0f;
   border-color: #9d0f0f;
+}
+
+.Button.outline.mr_white {
+  color: white;
+  border-color: white;
 }
