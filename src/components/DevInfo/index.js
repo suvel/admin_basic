@@ -1,8 +1,7 @@
 import './style.css'
-import twitter_icon from '../../asset/sm_twitter.svg'
-import fb_icon from '../../asset/sm_fb.svg'
-import gmail_icon from '../../asset/sm_gmail.svg'
 import wel_emoji from '../../asset/wel_emoji.png'
+import devDetail from '../../content/devDetail.json'
+import SocialLink from '../SocialLink'
 
 const DevInfo = () => {
   return (
@@ -12,15 +11,17 @@ const DevInfo = () => {
       </div>
       <div className="dev_detail">
         <div className="dev_name">
-          Cody Fisher
+          {devDetail.name}
         </div>
         <div className="dev_designation">
-          SE @ Barone LLC.
+          {`${devDetail.designation}@${devDetail.company}`}
         </div>
         <div className="dev_contact">
-          <img src={twitter_icon} />
-          <img src={fb_icon} />
-          <img src={gmail_icon} />
+          {
+            devDetail?.social_contact.map((social) => {
+              return <SocialLink key={social.key} link={social.url} socialKey={social.key} />
+            })
+          }
         </div>
       </div>
     </div>
