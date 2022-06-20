@@ -12,7 +12,7 @@ const SocialLink = ({ link, socialKey }) => {
       case "TW": return twitter_icon;
       case "FB": return fb_icon;
       case "MAIL": return gmail_icon;
-      case "LN": return linkedIn;
+      case "LI": return linkedIn;
       case "GH": return github;
       default: return twitter_icon;
     }
