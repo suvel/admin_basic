@@ -1,5 +1,6 @@
 # Admin UI
 
+[Published Link](https://suvel.github.io/admin_basic/)
 ### Desc
 
 This is an project that I have crated for show casing my design and implementation of a Frontend application.
