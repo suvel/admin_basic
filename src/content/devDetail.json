@@ -1,19 +1,19 @@
 {
-  "name": " Cody Fisher",
-  "designation": "SE",
-  "company": "Barone LLC.",
+  "name": "Suvel Rathneswar",
+  "designation": "Software Engineer",
+  "company": "Soft Suave Technology",
   "social_contact": [
     {
       "key": "LI",
-      "url": "https://www.facebook.com/zuck"
+      "url": "https://www.linkedin.com/in/suvel-rathneswar-%E2%A0%80-baab611b7/"
     },
     {
       "key": "GH",
-      "url": "https://twitter.com/finkd"
+      "url": "https://github.com/suvel"
     },
     {
       "key": "MAIL",
-      "url": "mailto:zuckerberg@fb.com"
+      "url": "mailto:find.suvel@gmail.com"
     }
   ]
 }
