@@ -13,6 +13,7 @@ function TableData({ initialData }) {
         tableData,
         updateTableData,
     } = useContext(TableContext);
+    const [searchData, setSearchData] = useState([]);
 
     const clearSelection = () => {
         updateSelectedTableRow([])
@@ -22,17 +23,17 @@ function TableData({ initialData }) {
 
         const handelSearch = () => {
             if (searchText) {
-                const searchData = initialData.filter(item => {
+                const srchData = tableData.filter(item => {
                     return (
                         item.name.toLowerCase().includes(searchText.toLowerCase()) ||
                         item.email.toLowerCase().includes(searchText.toLowerCase()) ||
                         item.role.toLowerCase().includes(searchText.toLowerCase())
                     )
                 })
-                updateTableData(searchData)
+                setSearchData(srchData)
             }
             else {
-                updateTableData(initialData)
+                setSearchData(tableData)
             }
         }
 
@@ -42,14 +43,19 @@ function TableData({ initialData }) {
     }
 
     const handelOnPageChange = (start, end) => {
-        const pageData = tableData.slice(start, end);
+        const pageData = searchData.slice(start, end);
         setPaginatedData(pageData);
         clearSelection();
     }
 
     useEffect(() => {
         updateTableData(initialData);
+        setSearchData(initialData)
     }, [initialData])
+
+    useEffect(() => {
+        setSearchData(tableData)
+    }, [tableData])
 
     return (
         <div className='TableData' >
@@ -61,7 +67,7 @@ function TableData({ initialData }) {
                 onRowSelection={updateSelectedTableRow}
                 selectable={true}
             />
-            <Pagination records={tableData} onPageChange={handelOnPageChange} />
+            <Pagination records={searchData} onPageChange={handelOnPageChange} />
         </div>
     )
 }
