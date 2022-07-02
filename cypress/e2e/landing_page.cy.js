@@ -120,6 +120,9 @@ describe('[🧪] Checking the deleting functionality, deleting one row', () => {
     cy.get('.Searchbox > input').type(selectedEmail)
     cy.get('.Searchbox > button').click()
   })
+  it('check if record exist',()=>{
+    cy.get("tbody > tr").should('contain', 'There no record to show');
+  })
 })
 
 describe("[🧪] Checking the editing functionality, editing one row", () => {
