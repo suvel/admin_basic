@@ -72,7 +72,7 @@ describe('[🧪] Checking if the correct form is displayed on selecting multiple
 });
 
 describe('[🧪] Checking the searching functionality', () => {
-  let searchName = '';
+  let searchEmailId = '';
   it(`Go to Localhost:${portNumber}`, () => {
     cy.visit(`http://localhost:${portNumber}`)
   })
@@ -86,9 +86,9 @@ describe('[🧪] Checking the searching functionality', () => {
        (response) => {
         return response;
         }).then((response)=>{
-          const firstRecordName = response.response.body[0].name;
-          searchName = firstRecordName;
-          cy.get('.Searchbox > input').type(firstRecordName)
+          const firstRecordEmail = response.response.body[0].email;
+          searchEmailId = firstRecordEmail;
+          cy.get('.Searchbox > input').type(firstRecordEmail)
           cy.get('.Searchbox > button').click()
         })
       }
@@ -98,3 +98,26 @@ describe('[🧪] Checking the searching functionality', () => {
     })
 });
 
+describe('[🧪] Checking the deleting functionality, deleting one row', () => {
+    it(`Go to Localhost:${portNumber}`, () => {
+    cy.visit(`http://localhost:${portNumber}`)
+  })
+  it(`selecting a row`, () => {
+    cy.get('tbody > tr > td > input').first().click()
+  })
+  it(`check if the Total Rows is 1`, () => {
+    cy.contains("Total Rows:1")
+  })
+  let selectedEmail = '';
+  it(`getting the email of the selected member`, () => {
+    cy.get('div.LabeledInput').find('[placeholder="Email"]').invoke('val')
+    .then(emailId =>selectedEmail = emailId);
+  })
+  it('Delet the record',()=>{
+    cy.get('.Form_buttonsContainer').find('button').contains('Delete').click({delay:10});
+  })
+  it('Search for the searched name',()=>{
+    cy.get('.Searchbox > input').type(selectedEmail)
+    cy.get('.Searchbox > button').click()
+  })
+})
