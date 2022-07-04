@@ -7,19 +7,29 @@ import arrow from '../../asset/arrow.svg'
 import TableProvider from '../../context/tableContext'
 import memberlistPromise from '../../services/members/member.ls.js';
 import { WrkSpaceWinContext } from '../../context/wrkSpaceWinContext';
-
+import {ExceptionContext} from "../../context/exception"
+import errorDictionary from '../../content/errorDic'
 
 function Wrkspace() {
 
     const [tableData, setTableData] = useState([]);
+    const {showError} = useContext(ExceptionContext);
 
     const { windowType, availableWindowTypes, toggleWindowType } =
         useContext(WrkSpaceWinContext);
 
     useEffect(() => {
         const asynFun = async () => {
-            const memberlist = await memberlistPromise();
+            try{
+                const memberlist = await memberlistPromise();
             setTableData(memberlist);
+            }
+            catch(exp){
+                showError(
+                    errorDictionary.could_not_fetch.code,
+                    errorDictionary.could_not_fetch.msg
+                    )
+            }
         }
         asynFun();
     }, [])
