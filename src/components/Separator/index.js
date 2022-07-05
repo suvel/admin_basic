@@ -1,10 +1,8 @@
-import React from 'react'
-import './style.css'
+import React from "react";
+import "./style.css";
 
 function Separator() {
-    return (
-        <div className='Separator' />
-    )
+  return <div className="Separator" />;
 }
 
-export default Separator
+export default Separator;

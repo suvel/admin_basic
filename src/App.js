@@ -5,8 +5,8 @@ import Wrkspace from "./components/Wrkspace";
 import WrkSpaceWinProvider from "./context/wrkSpaceWinContext";
 import checkInternetIsAvailable from "./services/checkInternet";
 import NoInternet from "./components/NoInternet";
-import { ExceptionContext } from "./context/exception"
-import errorDictionary from './content/errorDic'
+import { ExceptionContext } from "./context/exception";
+import errorDictionary from "./content/errorDic";
 
 function App() {
   const [isOffline, setIsOffline] = useState(false);
@@ -21,13 +21,13 @@ function App() {
           console.log(msg);
           setIsOffline(false);
         }
-      }
-      catch (exp) {
+      } catch (exp) {
         console.log(exp);
         setIsOffline(true);
         showError(
           errorDictionary.no_internet.code,
-          errorDictionary.no_internet.msg)
+          errorDictionary.no_internet.msg
+        );
       }
     };
     setTimeout(() => {

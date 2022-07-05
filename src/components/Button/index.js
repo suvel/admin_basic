@@ -1,5 +1,5 @@
-import React from 'react'
-import './style.css'
+import React from "react";
+import "./style.css";
 
 /**
  types:-
@@ -14,11 +14,17 @@ alert - has sever side effects
 mr_white - has no side effects
 */
 
+const Button = ({
+  type = "solid",
+  variant = "carefree",
+  children,
+  ...props
+}) => {
+  return (
+    <button className={`Button ${type} ${variant}`} {...props}>
+      {children}
+    </button>
+  );
+};
 
-const Button = ({ type = "solid", variant = "carefree", children, ...props }) => {
-    return (
-        <button className={`Button ${type} ${variant}`} {...props}>{children}</button>
-    )
-}
-
-export default Button
+export default Button;

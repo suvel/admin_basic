@@ -12,7 +12,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var( --sp_green);
+  background-color: var(--sp_green);
   border: 2px solid white;
   border-radius: 20px;
 }
