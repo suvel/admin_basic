@@ -89,7 +89,7 @@ describe('[🧪] Checking the searching functionality', () => {
           const firstRecordEmail = response.response.body[0].email;
           searchEmailId = firstRecordEmail;
           cy.get('.Searchbox > input').type(firstRecordEmail)
-          cy.get('.Searchbox > button').click()
+          cy.get('.Searchbox').contains("Search").click();
         })
       }
     )
@@ -118,7 +118,7 @@ describe('[🧪] Checking the deleting functionality, deleting one row', () => {
   })
   it('Search for the searched name',()=>{
     cy.get('.Searchbox > input').type(selectedEmail)
-    cy.get('.Searchbox > button').click()
+    cy.get('.Searchbox').contains("Search").click();
   })
   it('check if record exist',()=>{
     cy.get("tbody > tr").should('contain', 'There no record to show');
@@ -157,7 +157,7 @@ describe("[🧪] Checking the editing functionality, editing one row", () => {
   });
     it('search for the searched name',()=>{
     cy.get('.Searchbox > input').type(selectedEmail)
-    cy.get('.Searchbox > button').click()
+    cy.get('.Searchbox').contains("Search").click();
   })
   it('checking name and role are updated',()=>{
     cy.get("tbody > tr").should('contain', 'New_name');
