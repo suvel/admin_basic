@@ -24,3 +24,8 @@ button:hover {
   background-color: gray !important;
   color: black !important;
 }
+
+button:disabled {
+  background-color: var(--dul_gray) !important;
+  cursor: not-allowed;
+}

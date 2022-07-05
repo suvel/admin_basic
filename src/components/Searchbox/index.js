@@ -1,26 +1,48 @@
-import React, { useState } from 'react'
-import Input from '../Input'
-import Button from '../Button'
-import './style.css'
+import React, { useState } from "react";
+import Input from "../Input";
+import Button from "../Button";
+import "./style.css";
 
 const Searchbox = ({ onSearchClicked }) => {
+  const [searchText, setSearchText] = useState("");
 
-    const [searchText, setSearchText] = useState('')
+  const handelOnSearchTextChange = (e) => {
+    setSearchText(e.target.value);
+  };
 
-    const handelOnSearchTextChange = (e) => {
-        setSearchText(e.target.value)
-    }
+  const handelOnSearch = (searchTxt) => {
+    onSearchClicked(searchTxt);
+  };
 
-    const handelOnSearch = () => {
-        onSearchClicked(searchText)
-    }
+  const clearSearchText = () => {
+    setSearchText("");
+  };
 
-    return (
-        <div className='Searchbox'>
-            <Input value={searchText} onChange={handelOnSearchTextChange} type='text' placeholder='Search' />
-            <Button onClick={handelOnSearch}>Search</Button>
-        </div>
-    )
-}
+  const handelOnClear = () => {
+    clearSearchText();
+    handelOnSearch("");
+  };
 
-export default Searchbox
+  const isButtonDisabled = searchText?.trim() !== "" ? false : true;
+
+  return (
+    <div className="Searchbox">
+      <Input
+        value={searchText}
+        onChange={handelOnSearchTextChange}
+        type="text"
+        placeholder="Search"
+      />
+      <Button onClick={() => handelOnSearch(searchText)}>Search</Button>
+      <Button
+        disabled={isButtonDisabled}
+        onClick={handelOnClear}
+        variant={"alert"}
+      >
+        Clear
+      </Button>
+    </div>
+  );
+};
+
+export default Searchbox;

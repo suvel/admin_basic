@@ -1,15 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import Workshop from './Workshop';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import Workshop from "./Workshop";
 // import reportWebVitals from './reportWebVitals';
+import ExpectionProvider from "./context/exception";
 
 const testing = 0;
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    !testing ? <App /> : <Workshop />
+  !testing ? (
+    <ExpectionProvider>
+      <App />
+    </ExpectionProvider>
+  ) : (
+    <Workshop />
+  )
 );
 
 // If you want to start measuring performance in your app, pass a function

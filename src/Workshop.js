@@ -1,12 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Workshop = () => {
-    return (
-        <>
-            <div>Workshop</div>
-           
-        </>
-    )
-}
+  return (
+    <>
+      <div>Workshop</div>
+    </>
+  );
+};
 
-export default Workshop
+export default Workshop;
