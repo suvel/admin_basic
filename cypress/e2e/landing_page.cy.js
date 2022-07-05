@@ -164,3 +164,51 @@ describe("[🧪] Checking the editing functionality, editing one row", () => {
     cy.get("tbody > tr").should('contain', 'New_role');
   })
 });
+
+describe(`[🧪] Checking "go to last page" pagination button`, () => {
+    let lastPageNumber =0;
+    it(`waiting for data to be fetched`, () => {
+    cy.intercept({
+      method: 'GET',
+      url: 'https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json',
+    }).as('recivedMemberData');
+
+    cy.visit(`http://localhost:${portNumber}`);
+
+    cy.wait('@recivedMemberData').then(
+      async (response) => {
+        const recMemLs = response.response.body.length;
+        cy.get('.Pagination').children().then((paginationBtn) => {
+          const pageCount = Math.ceil(recMemLs / 10);
+          lastPageNumber = pageCount;
+        })
+      }
+    )
+      }
+    );
+    it(`selecting "go to last page" button`,()=>{
+      cy.get(`button.RoundButton:last-child`).click();
+    })
+    it(`checking the last page is selected`, () => {
+     cy.get(`button.RoundButton.selected`).invoke("text").then((value=>{
+      expect(lastPageNumber.toString()).to.equal(value.trim())
+     }))
+    });
+})
+
+describe(`[🧪] Checking "go to first page" pagination button`, () => {
+  let firstPageNumber =1;
+  it(`waiting for data to be fetched`, () => {
+  cy.visit(`http://localhost:${portNumber}`);
+    }
+  );
+  it(`selecting "go to first page" button`,()=>{
+    cy.get(`button.RoundButton:first-child`).click();
+  })
+  it(`checking the first page is selected`, () => {
+   cy.get(`button.RoundButton.selected`).invoke("text").then((value=>{
+    expect(firstPageNumber.toString()).to.equal(value.trim())
+   }))
+  });
+})
+
