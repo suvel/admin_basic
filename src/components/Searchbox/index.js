@@ -7,20 +7,38 @@ const Searchbox = ({ onSearchClicked }) => {
 
     const [searchText, setSearchText] = useState('')
 
-    const handelOnSearchTextChange = (e) => {
-        setSearchText(e.target.value)
-    }
+  const handelOnSearchTextChange = (e) => {
+    setSearchText(e.target.value)
+  }
 
-    const handelOnSearch = () => {
-        onSearchClicked(searchText)
-    }
+  const handelOnSearch = (searchTxt) => {
+    onSearchClicked(searchTxt)
+  }
 
-    return (
-        <div className='Searchbox'>
-            <Input value={searchText} onChange={handelOnSearchTextChange} type='text' placeholder='Search' />
-            <Button onClick={handelOnSearch}>Search</Button>
-        </div>
-    )
+  const clearSearchText = () => {
+    setSearchText("");
+  };
+
+  const handelOnClear = () => {
+    clearSearchText();
+    handelOnSearch("");
+  };
+
+  const isButtonDisabled = searchText?.trim() !== "" ? false : true;
+
+  return (
+    <div className='Searchbox'>
+        <Input value={searchText} onChange={handelOnSearchTextChange} type='text' placeholder='Search' />
+        <Button onClick={handelOnSearch}>Search</Button>
+        <Button
+        disabled={isButtonDisabled}
+        onClick={handelOnClear}
+        variant={"alert"}
+      >
+        Clear
+        </Button>
+    </div>
+  )
 }
 
 export default Searchbox
