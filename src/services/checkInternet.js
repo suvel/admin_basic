@@ -12,7 +12,7 @@ const checkInternetIsAvailable = () => {
         })
       )
       .catch((error) => {
-        reject(error)
+        reject(error);
       });
   });
 };
