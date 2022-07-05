@@ -29,7 +29,7 @@ const Searchbox = ({ onSearchClicked }) => {
   return (
     <div className='Searchbox'>
         <Input value={searchText} onChange={handelOnSearchTextChange} type='text' placeholder='Search' />
-        <Button onClick={handelOnSearch}>Search</Button>
+        <Button onClick={()=>handelOnSearch(searchText)}>Search</Button>
         <Button
         disabled={isButtonDisabled}
         onClick={handelOnClear}
